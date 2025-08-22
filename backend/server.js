@@ -5,7 +5,7 @@ import { connectdb } from './config/db.js';
 import userRouter from './routes/userRouter.js';
 import path from 'path'
 import { fileURLToPath } from 'url';
-import resumeRouter from './routes/ResumeRoutes.js';
+import resumeRouter from './routes/resumeRoutes.js';
  
 
 const __filename=fileURLToPath(import.meta.url);
