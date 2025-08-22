@@ -11,8 +11,11 @@ import resumeRouter from './routes/ResumeRoutes.js';
 const __filename=fileURLToPath(import.meta.url);
 const __dirname=path.dirname(__filename)
 const app=express();
-const PORT=4000;
-app.use(cors());
+
+app.use(cors({
+    origin: process.env.FRONTEND_URL
+}
+));
 //connect db
 connectdb()
 app.use(express.json());
@@ -27,6 +30,7 @@ app.use('/uploads',express.static(path.join(__dirname,'uploads'),{
 app.get('/',(req,res)=>(
     res.send('API WORKING')
 ))
+const PORT = process.env.PORT || 4000;
 app.listen(PORT,()=>{
-    console.log(`server is on http://localhost:${PORT}`);
+    console.log(`server is on port:${PORT}`);
 })

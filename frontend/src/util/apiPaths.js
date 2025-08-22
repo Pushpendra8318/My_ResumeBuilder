@@ -1,4 +1,4 @@
-export const BASE_URL='http://localhost:4000'
+export const BASE_URL=process.env.BACKEND_URL
 //ROUTES USER FOR FRONTEND
 export const API_PATHS={
 
