@@ -1,11 +1,12 @@
 import express from 'express'
 import cors from 'cors'
-import 'dotenv/config'
 import { connectdb } from './config/db.js';
 import userRouter from './routes/userRouter.js';
 import path from 'path'
 import { fileURLToPath } from 'url';
 import resumeRouter from './routes/resumeRoutes.js';
+import dotenv from "dotenv"
+dotenv.config()
  
 
 const __filename=fileURLToPath(import.meta.url);
