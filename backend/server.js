@@ -14,19 +14,18 @@ const __dirname=path.dirname(__filename)
 const app=express();
 
 app.use(cors({
-    origin: process.env.FRONTEND_URL
-}
-));
+  origin: [
+    "http://localhost:5174",
+    "https://my-resume-builder-phi.vercel.app"
+  ],
+  credentials: true,
+}));
 //connect db
 connectdb()
 app.use(express.json());
 app.use('/api/auth',userRouter);
 app.use('/api/resume',resumeRouter)
-app.use('/uploads',express.static(path.join(__dirname,'uploads'),{
-    setHeader:(res,_path)=>{
-        res.set('Access-control-Allow-Origin','http://localhost:5174')
-    }
-}))
+app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 //Routes
 app.get('/',(req,res)=>(
     res.send('API WORKING')
