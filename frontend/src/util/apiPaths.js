@@ -3,21 +3,21 @@ export const BASE_URL=process.env.BACKEND_URL
 export const API_PATHS={
 
     AUTH:{
-        RAGISTER:'/api/auth/ragister',
-        LOGIN:'/api/auth/login',
-        GET_PROFILE:'/api/auth/profile',
+        RAGISTER:`${BASE_URL}/api/auth/ragister`,
+        LOGIN:`${BASE_URL}/api/auth/login`,
+        GET_PROFILE:`${BASE_URL}/api/auth/profile`,
     },
     RESUME:{
-      CREATE:'/api/resume',
-      GET_ALL:'/api/resume',
-      GET_BY_ID:(id)=>`/api/resume/${id}`,
+      CREATE:`${BASE_URL}/api/resume`,
+      GET_ALL:`${BASE_URL}/api/resume`,
+      GET_BY_ID:(id)=>`${BASE_URL}/api/resume/${id}`,
 
-      UPDATE: (id)=> `/api/resume/${id}`,
-      DELETE:(id)=> `/api/resume/${id}`,
-      UPLOAD_IMAGES :(id)=> `/api/resume/${id}/upload-images`,
+      UPDATE: (id)=> `${BASE_URL}/api/resume/${id}`,
+      DELETE:(id)=> `${BASE_URL}/api/resume/${id}`,
+      UPLOAD_IMAGES :(id)=> `${BASE_URL}/api/resume/${id}/upload-images`,
 
 },
 image:{
-    UPLOAD_IMAGE:'/api/auth/upload-image'
+    UPLOAD_IMAGE:`${BASE_URL}/api/auth/upload-image`
 }
 }
